@@ -1,0 +1,37 @@
+﻿@model IEnumerable<assigment.Models.Category>
+
+<div class="session1">
+
+    <div class="row">
+        <div class="content col-sm-12">
+            <div class="row">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Category Name</th>
+                            <th scope="col"> Category Image </th>
+                            <th scope="col">Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td scope="row">
+                                    @item.name
+                                </td>
+                                <td>
+                                    <img src="~/public/img/@Html.DisplayFor(image => item.image)" class="img-edit-cat" alt="">
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

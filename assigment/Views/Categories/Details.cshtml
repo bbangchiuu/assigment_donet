@@ -1,0 +1,48 @@
+﻿<section class="session1">
+    <div class="row">
+        <div class="col-lg-12 grid-uniform">
+            <div class="row">
+                @foreach (var val in ViewBag.products)
+                {
+                    <div class="col-sm-3 float-left">
+                        <a href="/products/Details/@val.ProductId">
+                            <div class=" wow bounceIn" data-wow-delay="0.1s">
+                                <div class="grid__item  product-item">
+                                    <div class="grid__image">
+                                        <img class="anhthem2" src="~/public/img/@val.Image">
+
+                                    </div>
+                                    <form action="" class="variants AddToCartForm">
+                                        <h3 class="h6">
+                                            <a href="">
+                                                @val.Name
+                                            </a>
+                                        </h3>
+                                        <div class="price">
+                                            <span class="product-price">
+                                                $
+                                                @val.Price
+                                            </span>
+                                            <span class="collection-ratings__wrap">
+                                                <div class="star-ratings-css">
+                                                    <div class="star-ratings-css-top">
+                                                        <span>★</span>
+                                                        <span>★</span>
+                                                        <span>★</span>
+                                                        <span>★</span>
+                                                        <span>★</span>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

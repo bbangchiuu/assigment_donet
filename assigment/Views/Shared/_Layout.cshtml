@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/public/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/public/vendor/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="~/public/vendor/font-awesome.css">
+    <link rel="stylesheet" href="~/public/vendor/all.css">
+    <link rel='stylesheet' href='~/public/vendor/css/animate.css'>
+    <link rel="stylesheet" href="~/public/stylesheets/style.css?m=12">
+    <link rel="stylesheet" href="~/public/stylesheets/ipadto.css">
+    <link rel="stylesheet" href="~/public/stylesheets/ipadnho.css">
+    <link rel="stylesheet" href="~/public/stylesheets/iphone.css">
+</head>
+<body>
+    <div class="nav col-md-12">
+        <div class="col-md-6 logo">
+            <small class="hot-line wow bounceIn" data-wow-delay="0.1s"><i class="fa fa-phone"></i> Hotline: +61(0) 383 766 284</small>
+            <div class="row">
+                <p class="logo-word col-sm-3 wow bounceIn" data-wow-delay="0.1s">
+                    <a href="/alithea">
+                        <img class="anh-logo" src="~/public/images/logo.png" alt="">
+                    </a>
+                </p>
+                <form action="/search/1" method="GET" class="col-sm-9 wow bounceIn" data-wow-delay="0.2s">
+                    <div class="form-group search-input">
+                        <label for=""></label>
+                        <input type="text" class="form-control" name="search" id="" aria-describedby="helpId"
+                               placeholder="Search products, categories...">
+                    </div>
+                    <button type="submit" class="nut-search"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 menu">
+            <ul>
+                <li class="wow bounceIn " data-wow-delay="0.2s"><a href="/Home">Home</a> </li>
+
+                <li class="wow bounceIn " data-wow-delay="0.4s"><a href="/Products/index">Products</a></li>
+                <li class="wow bounceIn " data-wow-delay="0.5s"><a href="/Categories/index">Categories</a></li>
+                <a href="/BuyItem/Index" class="xehang bounceIn">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="badge badge-light custom-badge" id="qty_order">
+                        @if (Session["TotalQuantity"] != null)
+                        {
+                            @Session["TotalQuantity"]
+                        }
+                        else
+                        {
+                            <span>0</span>
+                        }
+
+                    </span>
+                </a>
+
+            </ul>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <footer class="footer m-t-50">
+        <div class="widgets_wrapper">
+            <div class="container">
+                <div class="column one-fourth">
+                    <div class="widget_text widget widget_custom_html">
+                        <div class="textwidget custom-html-widget">
+                            <div class="image_frame image_item no_link scale-with-grid alignnone no_border">
+                                <h4 class="add-h4 wow bounceIn" data-wow-delay="0.1s">Alithea</h4>
+                            </div>
+
+                            <ul class="method">
+                                <p class="chube  wow bounceIn" data-wow-delay="0.1s">Payment Methods</p>
+                                <li>
+                                    <a href="#">
+                                        <img class="payment amex wow bounceIn" data-wow-delay="0.2s" src="../../images/amex.png">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="payment discover wow bounceIn" data-wow-delay="0.2s" src="../../images/discover.png">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="payment visa wow bounceIn" data-wow-delay="0.2s" src="../../images/visa.png">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="payment master wow bounceIn" data-wow-delay="0.2s" src="../../../images/master.png">
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column one-fourth">
+                    <div class="widget_text widget widget_custom_html">
+                        <h4 class="add-h4 wow bounceIn" data-wow-delay="0.1s">Let Us Help You</h4>
+                        <div class="textwidget custom-html-widget">
+                            <hr class="no_line" style="margin: 0 auto 20px;">
+                            <p class="chube pd-b wow bounceIn" data-wow-delay="0.2s"> <a href="">Shipping Rate & Policies</a> </p>
+                            <p class="chube pd-b wow bounceIn" data-wow-delay="0.2s"> <a href="">Returns & Replacements</a> </p>
+                            <p class="chube pd-b wow bounceIn" data-wow-delay="0.2s"> <a href="">Your account</a></p>
+                            <p class="chube pd-b wow bounceIn" data-wow-delay="0.2s"> <a href="">Your order</a></p>
+                            <p class="chube pd-b wow bounceIn" data-wow-delay="0.2s"> <a href="">Help</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column one-fourth">
+                    <div class="widget_text widget widget_custom_html">
+                        <h4 class="add-h4 wow bounceIn" data-wow-delay="0.1s">Any questions?</h4>
+                        <div class="textwidget custom-html-widget">
+                            <hr class="no_line" style="margin: 0 auto 20px;">
+                            <div class="google_font1 wow bounceIn" data-wow-delay="0.2s">
+                                +61(0) 383 766 284
+                            </div>
+                            <p class="big wow bounceIn" data-wow-delay="0.3s">
+                                <a href="#">alithea@envato.com</a>
+                            </p>
+                            <hr class="no_line" style="margin: 0 auto 55px;">
+                            <a name="" id="" class="btn btn-primary maudo wow bounceIn" data-wow-delay="0.4s" href="#" role="button">Get in touch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column one-fourth">
+                    <div class="widget_text widget widget_custom_html">
+                        <h4 class="add-h4 wow bounceIn" data-wow-delay="0.1s">Contact us</h4>
+                        <div class="textwidget custom-html-widget">
+                            <hr class="no_line" style="margin: 0 auto 20px;">
+                            <p class="chube wow bounceIn" data-wow-delay="0.2s"> 8 Ton That Thuyet St,<br> Cau Giay, Ha Noi,<br> Viet Nam</p>
+                            <hr class="no_line" style="margin: 0 auto 55px;">
+                            <a name="" id="" class="btn btn-primary mauxanh wow bounceIn" data-wow-delay="0.3s" href="#" role="button">Buy now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copy">
+            <div class="container">
+                <div class="column one" style="padding-top: 30px;">
+                    <a id="back_to_top" class="button button_js"><i class="fas fa-angle-up"></i></a>
+                    <div class="copyright wow bounceIn" data-wow-delay="0.2s">
+                        © 2018 BeLogistics 2 - Alithea. All Rights Reserved. <a target="_blank" rel="nofollow"
+                                                                                href="/alithea" style="color: #fff;">Alithea</a>
+                    </div>
+                    <ul class="social"></ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/public/vendor/jquery.js"></script>
+    <script src="~/public/vendor/js/poper.js"></script>
+    <script src="~/public/vendor/js/easing.js"></script>
+    <script src="~/public/vendor/js/bootstrap.min.js"></script>
+    <script src="~/public/vendor/js/all.js"></script>
+    <script src="~/public/vendor/js/wow.js"></script>
+    <script src="~/public/vendor/js/jquery.countdown.min.js"></script>
+    <script src="~/public/javascripts/admin.js"></script>
+    <script src="~/public/javascripts/register.js?m=3"></script>
+</body>
+</html>

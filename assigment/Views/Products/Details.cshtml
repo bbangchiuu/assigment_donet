@@ -1,0 +1,85 @@
+﻿@model assigment.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="detail11">
+    <div class="container">
+    </div>
+    <section class="section detail-product">
+        <div class="container w-7">
+            <div class="row">
+
+                <div class="bock-img-sp col-sm-6">
+                    <div class="with-100">
+                        <div class="top-thumbnail box wow bounceInLeft" data-wow-delay="0.2s">
+                            <img src="~/public/img/@Html.DisplayFor(model => model.Image)" class="anh-thumbnail" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-5 pull-right gt_sanpham">
+                    <p class="tieude wow bounceInRight" data-wow-delay="0.2s">
+
+                        @Html.DisplayFor(model => model.Name)
+                    </p>
+                    <div class="price wow bounceInRight" data-wow-delay="0.3s">
+                        <div class="row">
+                            <p class="col-sm-12">
+                                <strong>Price:</strong> $
+                                @Html.DisplayFor(model => model.Price)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row m-top-30 wow bounceInRight" data-wow-delay="0.5s">
+                        <div class="col-sm-12 col-sm-offset-4">
+                            <div class="row">
+                                <p class="col-sm-3"><strong>Quantity:</strong> </p>
+                                <div class="input-group col-sm-5 mb-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-light btn-sm" id="minus-btn"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <input type="number" id="qty_input" class="form-control form-control-sm" value="1"
+                                           min="1">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-light btn-sm" id="plus-btn"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <small>
+                                    @Html.DisplayFor(model => model.Quantity) products are available!
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-top-30">
+                        <div class="col-sm-12 col-sm-offset-4">
+                            <div class="input-group col-sm-8 mb-3">
+                                <div class="row">    
+                                    <input type="hidden" value="@Html.DisplayFor(model => model.ProductId)" id="pro_id"/>
+                                    <button class="btn btn-danger buy-now wow bounceInRight" data-wow-delay="0.3s" id="addItem">
+                                        <i class="fa fa-cart-plus"></i> Add to
+                                        cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row bot-detail">
+                    <div class="bock-video-sp col-sm-6">
+                        <div class="with-100">
+                            <div class="top-thumbnail wow bounceIn" data-wow-delay="0.2s">
+                                <p class="col-sm-12 j-center">
+                                    <strong>Description:</strong>
+                                    @Html.DisplayFor(model => model.Desciption)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>

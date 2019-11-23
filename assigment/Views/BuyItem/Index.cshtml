@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="session1">
+    @if (ViewBag.list_pro != null)
+    {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var val in ViewBag.list_pro)
+            {
+                <tr>
+                    <th>@val.Name</th>
+                    <th>@val.Price</th>
+                    <th>@val.Quantity</th>
+                    <th>
+                        <img src="~/public/img/@val.Image" width="100px">
+                    </th>
+                    <th>
+                        <a href="/products/Details/@val.ProductId">Detail</a>|
+                        <a class="delete-user" href="/BuyItem/Delete_order/@val.ProductId">Deleted</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+    <p>Tổng số lương: @Session["TotalQuantity"]</p>
+    <p>Tổng số tiền: @Session["TotalPrice"]</p>
+    }
+    else
+    {
+        <h2>Bạn chưa mua gì cả</h2>
+    }
+</div>
